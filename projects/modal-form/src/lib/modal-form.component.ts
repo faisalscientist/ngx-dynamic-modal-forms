@@ -39,7 +39,9 @@ export class ModalFormComponent implements OnInit {
   }
 
   openModal(content: any) {
-    this.modalService.open(content, { centered: true });
+    if (this.controls !== null && this.controls !== undefined) {
+      this.modalService.open(content, { centered: true });
+    }
   }
 
   closeModal() {
