@@ -1,1 +1,66 @@
-<p>dynamic-form works!</p>
+<div class="modal-header">
+  <h4 class="modal-title">Form</h4>
+  <button type="button" class="close" aria-label="Close" (click)="closeModal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form class="m-t-10" [formGroup]="formGroup">
+    <div *ngFor="let control of controls">
+      <div [ngSwitch]="control.type">
+        <div *ngSwitchCase="'text'">
+          <div class="form-group">
+            <label for="">{{ control.description }}</label>
+            <input
+              type="text"
+              class="form-control"
+              [placeholder]="'Enter ' + control.description"
+              formControlName="{{ control.label }}"
+            />
+            <ngx-form-errors
+              [control]="formGroup.controls[control.label]"
+            ></ngx-form-errors>
+          </div>
+        </div>
+        <div *ngSwitchCase="'number'">
+          <div class="form-group">
+            <label for="">{{ control.description }}</label>
+            <input
+              type="number"
+              class="form-control"
+              [placeholder]="'Enter ' + control.description"
+              formControlName="{{ control.label }}"
+            />
+          </div>
+        </div>
+        <!-- <div *ngSwitchCase="'number'">
+          <input type="number" formControlName="{{ form_elem.label }}" />
+        </div>
+        <div *ngSwitchCase="'select'">
+          <select formControlName="{{ form_elem.label }}">
+            <option *ngFor="let opt of form_elem.options">
+              {{ opt }}
+            </option>
+          </select>
+        </div> -->
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-primary"
+    (click)="submitForm()"
+    [title]="
+      formGroup.invalid ? 'Fill the form to continue' : 'Click to continue'
+    "
+    [disabled]="formGroup.invalid || spinner"
+    [ngStyle]="{ cursor: formGroup.invalid ? 'not-allowed' : 'pointer' }"
+  >
+    Add <i *ngIf="spinner" class="fa fa-spinner fa-pulse m-l-10"></i>
+  </button>
+  <button type="button" class="btn btn-light" (click)="closeModal()">
+    Close
+  </button>
+</div>

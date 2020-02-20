@@ -1,0 +1,7 @@
+<button id="showModal" (click)="openModal(formModal)"></button>
+<ng-template #formModal let-modal>
+  <ngx-dynamic-form
+    [controls]="controls"
+    (next)="onNext($event)"
+  ></ngx-dynamic-form>
+</ng-template>

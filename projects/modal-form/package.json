@@ -1,6 +1,9 @@
 {
-  "name": "modal-form",
+  "name": "ngx-dynamic-modal-form",
   "version": "1.0.0",
+  "dependencies": {
+    "@ng-bootstrap/ng-bootstrap": "^5.3.0"
+  },
   "peerDependencies": {
     "@angular/common": "^8.2.14",
     "@angular/core": "^8.2.14"
