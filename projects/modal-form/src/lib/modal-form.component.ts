@@ -16,7 +16,21 @@ import { NgbModal } from "@ng-bootstrap/ng-bootstrap";
 })
 export class ModalFormComponent implements OnInit {
   @Input() controls: any;
+  @Input()
+  set open(_open: boolean) {
+    if (_open) {
+      document.getElementById("showModal").click();
+    } else {
+      this.closeModal();
+    }
+    this._open = _open;
+  }
+  get open(): boolean {
+    return this._open;
+  }
   @Output() next: EventEmitter<any> = new EventEmitter();
+
+  _open: boolean = false;
 
   constructor(private modalService: NgbModal) {}
 
@@ -32,22 +46,5 @@ export class ModalFormComponent implements OnInit {
     this.modalService.dismissAll();
   }
 
-  ngOnInit() {
-    this.controls = [
-      {
-        description: "Name",
-        type: "text",
-        label: "name",
-        value: "",
-        validators: ["required", "email"]
-      },
-      {
-        description: "Number",
-        type: "number",
-        label: "number",
-        value: ""
-      }
-    ];
-    document.getElementById("showModal").click();
-  }
+  ngOnInit() {}
 }

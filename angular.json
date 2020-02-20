@@ -115,7 +115,7 @@
         }
       }
     },
-    "ngx-dynamic-modal-form": {
+    "ngx-dynamic-modal-forms": {
       "projectType": "library",
       "root": "projects/modal-form",
       "sourceRoot": "projects/modal-form/src",

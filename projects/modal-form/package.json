@@ -1,5 +1,5 @@
 {
-  "name": "ngx-dynamic-modal-form",
+  "name": "ngx-dynamic-modal-forms",
   "version": "1.0.2",
   "peerDependencies": {
     "@angular/common": "^8.2.14",

@@ -14,8 +14,8 @@
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2018", "dom"],
     "paths": {
-      "ngx-dynamic-modal-form": ["dist/ngx-dynamic-modal-form"],
-      "ngx-dynamic-modal-form/*": ["dist/ngx-dynamic-modal-form/*"]
+      "ngx-dynamic-modal-forms": ["dist/ngx-dynamic-modal-forms"],
+      "ngx-dynamic-modal-forms/*": ["dist/ngx-dynamic-modal-forms/*"]
     }
   },
   "angularCompilerOptions": {

@@ -35,7 +35,6 @@ export class DynamicFormComponent implements OnInit {
       group[control.label] = new FormControl(control.value, validators);
     });
     this.formGroup = this.formBuilder.group(group);
-    console.log(this.formGroup);
   }
 
   closeModal() {
@@ -43,8 +42,7 @@ export class DynamicFormComponent implements OnInit {
   }
 
   submitForm() {
-    console.log(this.formGroup);
-    // this.spinner = true;
+    this.spinner = true;
     const returnData = [];
     Object.keys(this.formGroup.controls).forEach(control => {
       var controlValue = {};
