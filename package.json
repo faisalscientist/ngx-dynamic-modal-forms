@@ -12,7 +12,6 @@
     "npm_pack": "cd dist/ngx-dynamic-modal-form && npm pack",
     "package": "npm run build_lib && npm run npm_pack"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "~8.2.14",
     "@angular/common": "~8.2.14",
